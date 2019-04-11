@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission To Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+      <div class="jumbotron text-center">
+        <h1>Mission To Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      </div>
+      <h1> Latest Mars News </h1>
+      <h3>{{ mars_data.news_title }}</h3>
+      <h6>{{ mars_data.paragraph_text }}</h6>
+      <hr>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>Equatorial Diameter</th>
+              <th>Polar Diameter</th>
+              <th>Mass</th>
+              <th>Moons</th>
+              <th>Orbital Distance</th>
+              <th>Orbital Period</th>
+              <th>Surface Temperature</th>
+              <th>First Record</th>
+              <th>Recorded By</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>6,792 km</td>
+              <td>6,752 km</td>
+              <td>6.42 x 10^23 kg (10.7% Earth)</td>
+              <td>2 (Phobos &amp; Deimos)</td>
+              <td>227,943,824 km (1.52 AU)</td>
+              <td>687 days (1.9 years)</td>
+              <td>-153 to 20 °C</td>
+              <td>2nd millennium BC</td>
+              <td>Egyptian astronomers</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <br>
+        <div class='col-md-8'>
+            <img src="{{ mars_data.featured_img_url }}" width=70% alt="Featured Mars Image">
+        </div>
+        <div class='col-md-4'>
+            <h1> Mars Weather </h1>
+            <p>{{ mars_data.mars_weather }}</p>
+        </div>
+  </div>
+</body>
+</html>
+
