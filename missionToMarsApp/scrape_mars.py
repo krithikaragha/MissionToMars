@@ -42,7 +42,7 @@ def scrape():
 
     li_tags = weather_soup.findAll('li', class_='js-stream-item stream-item stream-item')
 
-    div_content = li_tags[1].find('div', class_='content')
+    div_content = li_tags[0].find('div', class_='content')
     div_tweet = div_content.find('div', class_='js-tweet-text-container')
     
     mars_weather = div_tweet.find('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').text
@@ -61,28 +61,27 @@ def scrape():
 
     facts_table = facts_df.to_html()
 
-    facts_dict = facts_df.to_dict()
+    # facts_dict = facts_df.to_dict()
 
     # Scrape Mars Hemispheres
     hems_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     response = requests.get(hems_url)
     hems_soup = bs(response.text, 'lxml')
 
-    titles = []     # List to store the hemisphere titles
     links = []      # List to store the links to be visited
-    img_urls = []   # List to store the img_urls for the hemispheres
-
+    hemisphere_img_urls = []    # Links to store the dictionaries for each hemisphere
     astro_base_url = "https://astrogeology.usgs.gov"
 
     div_result = hems_soup.find('div', class_='result-list')
     div_items = div_result.findAll('div', class_='item')
 
     for div_item in div_items:
+        hemisphere = {}
         div_content = div_item.find('div', class_='description')
     
         title = div_content.find('h3').text
-        titles.append(title)
-    
+        hemisphere["title"] = title
+
         href = div_item.find('a', {"class":"itemLink product-item"})['href']
         links.append(astro_base_url + href)
 
@@ -92,7 +91,9 @@ def scrape():
 
             img_src = link_soup.find("img", {"class":"wide-image"})['src']
             img_url = astro_base_url + img_src
-            img_urls.append(img_url)
+            hemisphere["img_url"] = img_url
+
+        hemisphere_img_urls.append(hemisphere)
 
     # Store the scraped data in a dictionary
     # Store data in a dictionary
@@ -101,8 +102,8 @@ def scrape():
         "paragraph_text": news_p,
         "featured_img_url" : featured_img_url,
         "mars_weather" : mars_weather,
-        "hemisphere_titles" : titles,
-        "hemisphere_img_urls" : img_urls
+        "mars_facts" : facts_table,
+        "hemisphere_img_urls" : hemisphere_img_urls
     }
 
     # Close the browser after scraping

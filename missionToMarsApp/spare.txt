@@ -1,0 +1,52 @@
+<!--
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th>Equatorial Diameter</th>
+              <th>Polar Diameter</th>
+              <th>Mass</th>
+              <th>Moons</th>
+              <th>Orbital Distance</th>
+              <th>Orbital Period</th>
+              <th>Surface Temperature</th>
+              <th>First Record</th>
+              <th>Recorded By</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>6,792 km</td>
+              <td>6,752 km</td>
+              <td>6.42 x 10^23 kg (10.7% Earth)</td>
+              <td>2 (Phobos &amp; Deimos)</td>
+              <td>227,943,824 km (1.52 AU)</td>
+              <td>687 days (1.9 years)</td>
+              <td>-153 to 20 °C</td>
+              <td>2nd millennium BC</td>
+              <td>Egyptian astronomers</td>
+            </tr>
+          </tbody>
+        </table> -->
+
+
+<!-- 
+      <h1><center>Mars Hemispheres</center></h1>  
+      <div class='col-md-6'>
+        <img src='{{ mars_data.hemisphere_img_urls[0] }}', alt='Cerebrus Hemisphere'>
+        <h1>{{ mars_data.hemisphere_titles[0] }}</h1>
+      </div>
+      <div class='col-md-6'>
+        <img src='{{ mars_data.hemisphere_img_urls[1] }}', alt='Cerebrus Hemisphere'>
+        <h1>{{ mars_data.hemisphere_titles[1] }}</h1>
+      </div>
+      <div class='col-md-6'>
+        <img src='{{ mars_data.hemisphere_img_urls[2] }}', alt='Cerebrus Hemisphere'>
+        <h1>{{ mars_data.hemisphere_titles[2] }}</h1>
+      </div>
+      <div class='col-md-6'>
+        <img src='{{ mars_data.hemisphere_img_urls[3] }}', alt='Cerebrus Hemisphere'>
+        <h1>{{ mars_data.hemisphere_titles[3] }}</h1>
+      </div>
+    </div> -->
