@@ -134,24 +134,6 @@ df.columns = ['Equatorial Diameter', 'Polar Diameter', 'Mass', 'Moons',
               'First Record', 'Recorded By']
 df
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
