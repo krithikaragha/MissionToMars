@@ -49,7 +49,6 @@ def scrape():
 
     # Scrape Mars Facts
     facts_url = 'http://space-facts.com/mars/'
-    facts_dict = {}
     tables = pd.read_html(facts_url, encoding='utf-8')
 
     facts_df = tables[0]
@@ -60,8 +59,6 @@ def scrape():
                         'First Record', 'Recorded By']
 
     facts_table = facts_df.to_html()
-
-    # facts_dict = facts_df.to_dict()
 
     # Scrape Mars Hemispheres
     hems_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'

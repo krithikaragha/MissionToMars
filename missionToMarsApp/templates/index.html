@@ -60,14 +60,16 @@
         <p>{{ mars_data.mars_weather }}</p>
       </div>
       <hr>
-      <div class="col-md-12">
-        <center>
-          <h1> Mars Hemispheres</h1>
-          {% for item in mars_data.hemisphere_img_urls %}
-            <img src='{{ item.img_url }}' width=40% alt="Mars Hemisphere">
-            <h2>{{ item.title }}</h2>
-          {% endfor %}
-        </center>
+      <div class="row">
+        <div class="col-md-12">
+          <center>
+            <h1> Mars Hemispheres</h1>
+            {% for item in mars_data.hemisphere_img_urls %}
+              <img src='{{ item.img_url }}' width=40% alt="Mars Hemisphere">
+              <h2>{{ item.title }}</h2>
+            {% endfor %}
+          </center>
+        </div>
       </div>
     </div>      
 </body>
