@@ -46,6 +46,7 @@ def scrape():
     div_tweet = div_content.find('div', class_='js-tweet-text-container')
     
     mars_weather = div_tweet.find('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').text
+    mars_weather = mars_weather.split('pic')
 
     # Scrape Mars Facts
     facts_url = 'http://space-facts.com/mars/'
